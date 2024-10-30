@@ -1,6 +1,7 @@
 body {
   font-family: Arial, sans-serif;
-  margin: 5%;
+  margin: 10%;
+  margin-bottom: 5%;
   padding: 0;
   background-color: #000000;
   display: flex;
@@ -67,42 +68,62 @@ h1 {
   /* Adjust song box sizes for mobile */
   .one {
     grid-column: span 1;
+    margin-right: 70%;
+    margin-bottom: 10%;
   }
 
   .two {
     grid-column: span 2;
+    margin-left: 50%;
+    margin-bottom: 10%;
   }
 
   .three {
     grid-column: span 2;
+    margin-right: 50%;
+    margin-bottom: 10%;
   }
 
   .four {
     grid-column: span 1;
+    margin-left: 70%;
+    margin-bottom: 10%;
   }
 
   .five {
     grid-column: span 2;
+    margin-right: 50%;
+    margin-bottom: 10%;
   }
 
   .six {
     grid-column: span 2;
+    margin-left: 50%;
+    margin-bottom: 10%;
   }
 
   .seven {
     grid-column: span 1;
+    margin-right: 70%;
+    margin-bottom: 10%;
   }
 
   .eight {
     grid-column: span 2;
+    margin-left: 50%;
+    margin-bottom: 10%;
   }
 
   .nine {
     grid-column: span 2;
+    margin-right: 50%;
+    margin-bottom: 10%;
   }
 
   .ten {
     grid-column: span 2;
+    margin-left: 50%;
+    margin-bottom: 30%;
   }
 
   /* Adjust even-numbered boxes to be lower in mobile view */
