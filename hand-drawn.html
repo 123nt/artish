@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Randomly Placed Song List</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container" id="container">
+      <h1>Song List</h1>
+      <a href="#song1" class="song-box one">sarisauna</a>
+      <a href="#song2" class="song-box two">Song 2</a>
+      <a href="#song3" class="song-box three">Song 3</a>
+      <a href="#song4" class="song-box four">Song 4</a>
+      <a href="#song5" class="song-box five">Song 5</a>
+      <a href="#song6" class="song-box six">Song 6</a>
+      <a href="#song7" class="song-box seven">Song 7</a>
+      <a href="#song8" class="song-box eight">Song 8</a>
+      <a href="#song9" class="song-box nine">Song 9</a>
+      <a href="#song10" class="song-box ten">Song 10</a>
+
+      <!-- Audio elements for each song -->
+      <audio
+        id="song1"
+        src="Sajjan Raj Vaidya - 9841 [Official Release] - Sajjan (youtube) (1).mp3"
+      ></audio>
+      <audio id="song2" src="path/to/song2.mp3"></audio>
+      <audio id="song3" src="path/to/song3.mp3"></audio>
+      <audio id="song4" src="path/to/song4.mp3"></audio>
+      <audio id="song5" src="path/to/song5.mp3"></audio>
+      <audio id="song6" src="path/to/song6.mp3"></audio>
+      <audio id="song7" src="path/to/song7.mp3"></audio>
+      <audio id="song8" src="path/to/song8.mp3"></audio>
+      <audio id="song9" src="path/to/song9.mp3"></audio>
+      <audio id="song10" src="path/to/song10.mp3"></audio>
+    </div>
+
+    <div class="audio-container" id="audioContainer" style="display: none">
+      <audio id="myAudio">
+        <source id="audioSource" src="" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+      <div class="controls">
+        <div class="progress-container">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <button id="playPauseBtn" class="play">
+          <i class="fas fa-play"></i>
+        </button>
+      </div>
+    </div>
+    <script>
+      const audioContainer = document.getElementById("audioContainer");
+      const audioSource = document.getElementById("audioSource");
+      const myAudio = document.getElementById("myAudio");
+      const playPauseBtn = document.getElementById("playPauseBtn");
+      const progressBar = document.getElementById("progressBar");
+
+      let isPlaying = false;
+
+      // Function to play audio
+      function playAudio(songId) {
+        const song = document.getElementById(songId);
+        if (myAudio.src !== song.src) {
+          audioSource.src = song.src;
+          myAudio.load();
+        }
+        myAudio.play();
+        isPlaying = true;
+        playPauseBtn.textContent = "Pause";
+        audioContainer.style.display = "block";
+      }
+
+      // Function to toggle play/pause
+      function togglePlay() {
+        if (isPlaying) {
+          myAudio.pause();
+          playPauseBtn.textContent = "Play";
+        } else {
+          myAudio.play();
+          playPauseBtn.textContent = "Pause";
+        }
+        isPlaying = !isPlaying;
+      }
+
+      // Function to update progress bar
+      function updateProgress() {
+        const duration = myAudio.duration;
+        const currentTime = myAudio.currentTime;
+        const progress = (currentTime / duration) * 100;
+        progressBar.style.width = progress + "%";
+      }
+
+      // Event listeners
+      playPauseBtn.addEventListener("click", togglePlay);
+      myAudio.addEventListener("timeupdate", updateProgress);
+
+      // Add event listeners to song boxes
+      const songBoxes = document.querySelectorAll(".song-box");
+      songBoxes.forEach((songBox, index) => {
+        songBox.addEventListener("click", () => {
+          playAudio(`song${index + 1}`);
+        });
+      });
+    </script>
+  </body>
+</html>
