@@ -3,42 +3,59 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>sajjan raj vadya</title>
+    <title>hip hop Playlist</title>
     <style>
       body {
         font-family: "Comic Sans MS", cursive, sans-serif;
-        background-color: #f4f1e6;
-        color: #5e5e5e;
+        background-color: #7d6980a9;
+        color: #241515;
         display: flex;
         justify-content: center;
         padding: 20px;
       }
 
       .container {
-        width: 100%;
         max-width: 500px;
+        margin-right: 20%;
+        transition: transform 0.3s ease; /* Transition for zoom effect */
+      }
+
+      .header-text {
+        text-align: center;
+        font-weight: bold;
+        color: #200b11;
+        font-size: 1.5em;
+        margin-bottom: 20px;
+        margin-left: 25%;
+        padding-top: 10%;
       }
 
       h1 {
         text-align: center;
-        color: #d2738a;
+        color: #200b11;
         font-size: 2em;
         margin-bottom: 20px;
+        margin-left: 25%;
       }
 
       .song {
         display: flex;
         align-items: center;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
         background: #fff9e6;
         padding: 10px;
         border-radius: 20px;
         box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-        cursor: pointer; /* Change cursor to pointer */
+        cursor: pointer;
+        transition: transform 0.3s ease; /* Transition for hover effect */
+      }
+
+      .song:hover {
+        transform: scale(1.1); /* Zoom on hover */
       }
 
       .song img {
-        width: 60px;
+        width: 50px;
         height: 60px;
         border-radius: 5px;
         margin-right: 10px;
@@ -53,129 +70,511 @@
 
       .song-title {
         font-weight: bold;
-        color: #d2738a;
+        color: #5c5657;
         font-size: 1.1em;
-      }
-
-      .song-description {
-        font-size: 0.9em;
-        color: #555;
+        text-align: center;
       }
 
       .progress-container {
-        display: none; /* Hidden by default */
+        display: none;
         margin-top: 10px;
         width: 100%;
-        text-align: center; /* Center the progress bar */
+        text-align: center;
       }
 
       .progress {
-        width: 80%; /* Centered width */
+        width: 80%;
       }
 
-      /* Mobile responsiveness */
+      /* Zoom class for when a song is playing */
+      .zoom {
+        transform: scale(1.1); /* Zoom in */
+      }
+      a {
+        text-decoration: none;
+      }
+
       @media (max-width: 600px) {
         .song {
-          flex-direction: column;
+          flex-direction: row;
           align-items: flex-start;
+          width: 115%;
         }
 
         .song img {
-          width: 30px;
-          height: 30px;
-          margin: 0 0 10px 0;
+          width: 90px;
+          height: 80px;
+          margin: 0 0 10px 6px;
         }
 
         .song-title {
           font-size: 1em;
+        }
+
+        .song:hover {
+          transform: scale(1.1); /* Zoom on hover */
+        }
+        .progress {
+          margin-left: 25%;
+        }
+        a {
+          text-decoration: none;
+          color: #200b11;
+        }
+        /* Zoom class for when a song is playing */
+        .zoom {
+          transform: scale(1.1); /* Zoom in */
         }
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <h1>sajjan raj vadya</h1>
+      <!-- Navigation Bar -->
 
-      <!-- Song 2 -->
-      <div class="song" onclick="togglePlay('song2')">
+      <div class="header-text">
+        <a href="https://123nt.github.io/music/home.html">home</a>
+        <a href="https://123nt.github.io/music/explore.html">explore</a>
+      </div>
+
+      <h1>hip hop Playlist</h1>
+
+      <!-- Songs List (20 Songs) -->
+      <div
+        class="song"
+        onclick="togglePlay('song1')"
+        style="background-color: rgb(221, 215, 215)"
+      >
+        <img
+          alt="File:Sajjan Raj Vaidya Live in New York City 01.jpg"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Sajjan_Raj_Vaidya_Live_in_New_York_City_01.jpg/506px-Sajjan_Raj_Vaidya_Live_in_New_York_City_01.jpg?20190110005409"
+          decoding="async"
+          width="506"
+          height="599"
+          srcset="
+            https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Sajjan_Raj_Vaidya_Live_in_New_York_City_01.jpg/759px-Sajjan_Raj_Vaidya_Live_in_New_York_City_01.jpg?20190110005409  1.5x,
+            https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Sajjan_Raj_Vaidya_Live_in_New_York_City_01.jpg/1012px-Sajjan_Raj_Vaidya_Live_in_New_York_City_01.jpg?20190110005409 2x
+          "
+          data-file-width="2550"
+          data-file-height="3018"
+        />
+        <div class="song-details">
+          <div class="song-title">Song 1: An Art Gallery Could Never Mine</div>
+        </div>
+      </div>
+      <div class="progress-container" id="song1">
+        <audio id="audio1" src="path_to_song1.mp3"></audio>
+        <input
+          type="range"
+          class="progress"
+          id="progress1"
+          value="0"
+          step="1"
+        />
+        <div class="play-pause"><span id="duration1">0:00</span></div>
+      </div>
+
+      <!-- Repeat similar blocks for each song up to Song 20 -->
+      <!-- Example for Song 2 -->
+      <div
+        class="song"
+        onclick="togglePlay('song2')"
+        style="background-color: rgba(190, 184, 184, 0.89)"
+      >
         <img src="https://via.placeholder.com/60" alt="Song Cover" />
         <div class="song-details">
-          <div class="song-title">An Art Gallery could never mine</div>
-          <div class="song-description">
-            Cause you're not just a glamour <br />
-            I miss your cute heart!
-          </div>
-          <div class="progress-container" id="song2">
-            <audio
-              id="audio2"
-              src="sajjan/Sajjan Raj Vaidya - 9841 [Official Release] - Sajjan (youtube) (1).mp3"
-            ></audio>
-            <input
-              type="range"
-              class="progress"
-              id="progress2"
-              value="0"
-              step="1"
-            />
-            <div class="play-pause">
-              <span id="duration2">0:00</span>
-            </div>
-          </div>
+          <div class="song-title">Song 2: Enchanted Legend Factor</div>
         </div>
       </div>
-
-      <!-- Song 3 -->
-      <div class="song" onclick="togglePlay('song3')">
-        <img src="" alt="Song Cover" />
-        <div class="song-details">
-          <div class="song-title">May one discover</div>
-          <div class="song-description">
-            Please don't be in full solid because else >
-          </div>
-          <div class="progress-container" id="song3">
-            <audio id="audio3" src=""></audio>
-            <input
-              type="range"
-              class="progress"
-              id="progress3"
-              value="0"
-              step="1"
-            />
-            <div class="play-pause">
-              <span id="duration3">0:00</span>
-            </div>
-          </div>
-        </div>
+      <div class="progress-container" id="song2">
+        <audio id="audio2" src="path_to_song2.mp3"></audio>
+        <input
+          type="range"
+          class="progress"
+          id="progress2"
+          value="0"
+          step="1"
+        />
+        <div class="play-pause"><span id="duration2">0:00</span></div>
       </div>
 
-      <!-- Song 4 -->
-      <div class="song" onclick="togglePlay('song4')">
+      <!-- Repeat similar blocks for each song up to Song 20 -->
+      <!-- Example for Song 3 -->
+      <div
+        class="song"
+        onclick="togglePlay('song3')"
+        style="background-color: #dac2c2"
+      >
         <img src="https://via.placeholder.com/60" alt="Song Cover" />
         <div class="song-details">
-          <div class="song-title">Enchanted legend factor</div>
-          <div class="song-description">
-            It's not living, if it's not with candy
-          </div>
-          <div class="progress-container" id="song4">
-            <audio id="audio4" src="path_to_your_song4.mp3"></audio>
-            <input
-              type="range"
-              class="progress"
-              id="progress4"
-              value="0"
-              step="1"
-            />
-            <div class="play-pause">
-              <span id="duration4">0:00</span>
-            </div>
-          </div>
+          <div class="song-title">Song 3: Mysterious Melody</div>
         </div>
       </div>
+      <div class="progress-container" id="song3">
+        <audio id="audio3" src="path_to_song3.mp3"></audio>
+        <input
+          type="range"
+          class="progress"
+          id="progress3"
+          value="0"
+          step="1"
+        />
+        <div class="play-pause"><span id="duration3">0:00</span></div>
+      </div>
+      <div
+        class="song"
+        onclick="togglePlay('song4')"
+        style="background-color: #b4765e"
+      >
+        <img src="https://via.placeholder.com/60" alt="Song Cover" />
+        <div class="song-details">
+          <div class="song-title">Song 3: Mysterious Melody</div>
+        </div>
+      </div>
+      <div class="progress-container" id="song4">
+        <audio id="audio4" src="path_to_song3.mp3"></audio>
+        <input
+          type="range"
+          class="progress"
+          id="progress4"
+          value="0"
+          step="1"
+        />
+        <div class="play-pause"><span id="duration3">0:00</span></div>
+      </div>
+      <!--  -->
+
+      <div
+        class="song"
+        onclick="togglePlay('song5')"
+        style="background-color: rgb(188, 188, 219)"
+      >
+        <img src="https://via.placeholder.com/60" alt="Song Cover" />
+        <div class="song-details">
+          <div class="song-title">Song 1: An Art Gallery Could Never Mine</div>
+        </div>
+      </div>
+      <div class="progress-container" id="song5">
+        <audio id="audio5" src="path_to_song1.mp3"></audio>
+        <input
+          type="range"
+          class="progress"
+          id="progress5"
+          value="0"
+          step="1"
+        />
+        <div class="play-pause"><span id="duration1">0:00</span></div>
+      </div>
+
+      <!-- Repeat similar blocks for each song up to Song 20 -->
+      <!-- Example for Song 2 -->
+      <div
+        class="song"
+        onclick="togglePlay('song6')"
+        style="background-color: rgb(165, 157, 187)"
+      >
+        <img src="https://via.placeholder.com/60" alt="Song Cover" />
+        <div class="song-details">
+          <div class="song-title">Song 2: Enchanted Legend Factor</div>
+        </div>
+      </div>
+      <div class="progress-container" id="song6">
+        <audio id="audio6" src="path_to_song2.mp3"></audio>
+        <input
+          type="range"
+          class="progress"
+          id="progress6"
+          value="0"
+          step="1"
+        />
+        <div class="play-pause"><span id="duration2">0:00</span></div>
+      </div>
+
+      <!-- Repeat similar blocks for each song up to Song 20 -->
+      <!-- Example for Song 3 -->
+      <div
+        class="song"
+        onclick="togglePlay('song7')"
+        style="background-color: rgb(207, 173, 195)"
+      >
+        <img src="https://via.placeholder.com/60" alt="Song Cover" />
+        <div class="song-details">
+          <div class="song-title">Song 3: Mysterious Melody</div>
+        </div>
+      </div>
+
+      <!--  -->
+      <div class="progress-container" id="song7">
+        <audio id="audio7" src="path_to_song3.mp3"></audio>
+        <input
+          type="range"
+          class="progress"
+          id="progress7"
+          value="0"
+          step="1"
+        />
+        <div class="play-pause"><span id="duration3">0:00</span></div>
+      </div>
+      <!--  -->
+      <div
+        class="song"
+        onclick="togglePlay('song8')"
+        style="background-color: rgb(206, 182, 188)"
+      >
+        <img src="https://via.placeholder.com/60" alt="Song Cover" />
+        <div class="song-details">
+          <div class="song-title">Song 3: Mysterious Melody</div>
+        </div>
+      </div>
+      <div class="progress-container" id="song8">
+        <audio id="audio8" src="path_to_song3.mp3"></audio>
+        <input
+          type="range"
+          class="progress"
+          id="progress8"
+          value="0"
+          step="1"
+        />
+        <div class="play-pause"><span id="duration3">0:00</span></div>
+      </div>
+
+      <!--  -->
+      <div
+        class="song"
+        onclick="togglePlay('song9')"
+        style="background-color: rgb(177, 153, 189)"
+      >
+        <img src="https://via.placeholder.com/60" alt="Song Cover" />
+        <div class="song-details">
+          <div class="song-title">Song 1: An Art Gallery Could Never Mine</div>
+        </div>
+      </div>
+      <div class="progress-container" id="song9">
+        <audio id="audio9" src="path_to_song1.mp3"></audio>
+        <input
+          type="range"
+          class="progress"
+          id="progress9"
+          value="0"
+          step="1"
+        />
+        <div class="play-pause"><span id="duration1">0:00</span></div>
+      </div>
+
+      <!-- Repeat similar blocks for each song up to Song 20 -->
+      <!-- Example for Song 2 -->
+
+      <div
+        class="song"
+        onclick="togglePlay('song11')"
+        style="background-color: rgba(211, 160, 160, 0.589)"
+      >
+        <img src="https://via.placeholder.com/60" alt="Song Cover" />
+        <div class="song-details">
+          <div class="song-title">Song 3: Mysterious Melody</div>
+        </div>
+      </div>
+      <div class="progress-container" id="song11">
+        <audio id="audio11" src="path_to_song3.mp3"></audio>
+        <input
+          type="range"
+          class="progress"
+          id="progress11"
+          value="0"
+          step="1"
+        />
+        <div class="play-pause"><span id="duration3">0:00</span></div>
+      </div>
+
+      <!--  -->
+      <div
+        class="song"
+        onclick="togglePlay('song12')"
+        style="background-color: rgba(201, 190, 190, 0.247)"
+      >
+        <img src="https://via.placeholder.com/60" alt="Song Cover" />
+        <div class="song-details">
+          <div class="song-title">Song 3: Mysterious Melody</div>
+        </div>
+      </div>
+      <div class="progress-container" id="song12">
+        <audio id="audio12" src="path_to_song3.mp3"></audio>
+        <input
+          type="range"
+          class="progress"
+          id="progress12"
+          value="0"
+          step="1"
+        />
+        <div class="play-pause"><span id="duration3">0:00</span></div>
+      </div>
+
+      <div
+        class="song"
+        onclick="togglePlay('song13')"
+        style="background-color: rgb(196, 190, 190)"
+      >
+        <img src="https://via.placeholder.com/60" alt="Song Cover" />
+        <div class="song-details">
+          <div class="song-title">Song 1: An Art Gallery Could Never Mine</div>
+        </div>
+      </div>
+      <div class="progress-container" id="song13">
+        <audio id="audio13" src="path_to_song1.mp3"></audio>
+        <input
+          type="range"
+          class="progress"
+          id="progress13"
+          value="0"
+          step="1"
+        />
+        <div class="play-pause"><span id="duration1">0:00</span></div>
+      </div>
+
+      <!-- Repeat similar blocks for each song up to Song 20 -->
+      <!-- Example for Song 2 -->
+      <div
+        class="song"
+        onclick="togglePlay('song14')"
+        style="background-color: rgba(174, 216, 135, 0.678)"
+      >
+        <img src="https://via.placeholder.com/60" alt="Song Cover" />
+        <div class="song-details">
+          <div class="song-title">Song 2: Enchanted Legend Factor</div>
+        </div>
+      </div>
+      <div class="progress-container" id="song14">
+        <audio id="audio14" src="path_to_song2.mp3"></audio>
+        <input
+          type="range"
+          class="progress"
+          id="progress14"
+          value="0"
+          step="1"
+        />
+        <div class="play-pause"><span id="duration2">0:00</span></div>
+      </div>
+
+      <!-- Repeat similar blocks for each song up to Song 20 -->
+      <!-- Example for Song 3 -->
+      <div
+        class="song"
+        onclick="togglePlay('song15')"
+        style="background-color: rgb(186, 190, 149)"
+      >
+        <img src="https://via.placeholder.com/60" alt="Song Cover" />
+        <div class="song-details">
+          <div class="song-title">Song 3: Mysterious Melody</div>
+        </div>
+      </div>
+      <div class="progress-container" id="song15">
+        <audio id="audio15" src="path_to_song3.mp3"></audio>
+        <input
+          type="range"
+          class="progress"
+          id="progress15"
+          value="0"
+          step="1"
+        />
+        <div class="play-pause"><span id="duration3">0:00</span></div>
+      </div>
+      <div
+        class="song"
+        onclick="togglePlay('song16')"
+        style="background-color: rgb(190, 171, 192)"
+      >
+        <img src="https://via.placeholder.com/60" alt="Song Cover" />
+        <div class="song-details">
+          <div class="song-title">Song 3: Mysterious Melody</div>
+        </div>
+      </div>
+      <div class="progress-container" id="song16">
+        <audio id="audio16" src="path_to_song3.mp3"></audio>
+        <input
+          type="range"
+          class="progress"
+          id="progress16"
+          value="0"
+          step="1"
+        />
+        <div class="play-pause"><span id="duration3">0:00</span></div>
+      </div>
+      <div
+        class="song"
+        onclick="togglePlay('song17')"
+        style="background-color: rgb(182, 178, 125)"
+      >
+        <img src="https://via.placeholder.com/60" alt="Song Cover" />
+        <div class="song-details">
+          <div class="song-title">Song 1: An Art Gallery Could Never Mine</div>
+        </div>
+      </div>
+      <div class="progress-container" id="song17">
+        <audio id="audio17" src="path_to_song1.mp3"></audio>
+        <input
+          type="range"
+          class="progress"
+          id="progress17"
+          value="0"
+          step="1"
+        />
+        <div class="play-pause"><span id="duration1">0:00</span></div>
+      </div>
+
+      <!-- Repeat similar blocks for each song up to Song 20 -->
+      <!-- Example for Song 2 -->
+      <div
+        class="song"
+        onclick="togglePlay('song18')"
+        style="background-color: rgb(199, 230, 205)"
+      >
+        <img src="https://via.placeholder.com/60" alt="Song Cover" />
+        <div class="song-details">
+          <div class="song-title">Song 2: Enchanted Legend Factor</div>
+        </div>
+      </div>
+      <div class="progress-container" id="song18">
+        <audio id="audio18" src="path_to_song2.mp3"></audio>
+        <input
+          type="range"
+          class="progress"
+          id="progress18"
+          value="0"
+          step="1"
+        />
+        <div class="play-pause"><span id="duration2">0:00</span></div>
+      </div>
+
+      <!-- Repeat similar blocks for each song up to Song 20 -->
+      <!-- Example for Song 3 -->
+      <div
+        class="song"
+        onclick="togglePlay('song19')"
+        style="background-color: rgb(159, 166, 187)"
+      >
+        <img src="https://via.placeholder.com/60" alt="Song Cover" />
+        <div class="song-details">
+          <div class="song-title">Song 3: Mysterious Melody</div>
+        </div>
+      </div>
+      <div class="progress-container" id="song19">
+        <audio id="audio19" src="path_to_song3.mp3"></audio>
+        <input
+          type="range"
+          class="progress"
+          id="progress19"
+          value="0"
+          step="1"
+        />
+        <div class="play-pause"><span id="duration3">0:00</span></div>
+      </div>
+
+      <!-- Repeat this structure up to Song 20 -->
     </div>
 
     <script>
-      let currentlyPlayingAudio = null; // Variable to keep track of the currently playing audio
-      let currentlyPlayingContainer = null; // Variable to keep track of the currently playing progress container
+      let currentlyPlayingAudio = null;
+      let currentlyPlayingContainer = null;
 
       function togglePlay(songId) {
         const progressContainer = document.getElementById(songId);
@@ -183,34 +582,42 @@
           `audio${songId.charAt(songId.length - 1)}`
         );
 
-        // If another audio is currently playing, pause it and hide its progress container
         if (currentlyPlayingAudio && currentlyPlayingAudio !== audio) {
           currentlyPlayingAudio.pause();
-          currentlyPlayingAudio.currentTime = 0; // Reset the current time if you want
-          currentlyPlayingContainer.style.display = "none"; // Hide the progress container of the previous song
+          currentlyPlayingContainer.style.display = "none";
         }
 
-        // Toggle the display of the current progress container
-        if (
-          progressContainer.style.display === "none" ||
-          progressContainer.style.display === ""
-        ) {
-          progressContainer.style.display = "block"; // Show it
-        } else {
-          progressContainer.style.display = "none"; // Hide it
+        if (currentlyPlayingAudio === audio) {
+          audio.pause();
+          currentlyPlayingContainer.style.display = "none";
+          currentlyPlayingAudio = null;
+          currentlyPlayingContainer = null;
+          return;
         }
 
-        // Play or pause the audio when the song container is clicked
+        progressContainer.style.display = "block";
+
         if (audio.paused) {
           audio.play();
-          currentlyPlayingAudio = audio; // Set the currently playing audio
-          currentlyPlayingContainer = progressContainer; // Set the currently playing progress container
-          updateProgress(audio, songId); // Start updating the progress
-        } else {
-          audio.pause();
-          currentlyPlayingAudio = null; // Clear the currently playing audio
-          currentlyPlayingContainer = null; // Clear the currently playing progress container
+          currentlyPlayingAudio = audio;
+          currentlyPlayingContainer = progressContainer;
+          updateProgress(audio, songId);
         }
+
+        audio.addEventListener("ended", () => {
+          const nextSongId = getNextSongId(songId);
+          if (nextSongId) {
+            setTimeout(() => {
+              togglePlay(nextSongId);
+            }, 2000);
+          }
+        });
+      }
+
+      function getNextSongId(currentSongId) {
+        const currentIndex = parseInt(currentSongId.replace("song", ""));
+        const nextIndex = currentIndex + 1;
+        return nextIndex <= 20 ? `song${nextIndex}` : null;
       }
 
       function updateProgress(audio, songId) {
@@ -234,8 +641,8 @@
             .padStart(2, "0")}`;
         });
 
-        // Update audio current time when progress bar is changed
-        progress.addEventListener("input", () => {
+        progress.addEventListener("input", (event) => {
+          event.preventDefault();
           const newTime = (progress.value / 100) * audio.duration;
           audio.currentTime = newTime;
         });
