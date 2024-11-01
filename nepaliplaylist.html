@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="audio-waves.png" type="image/x-icon" />
-    <title>Nepali Playlist</title>
+    <title>my Playlist</title>
     <style>
       body {
         font-family: "Comic Sans MS", cursive, sans-serif;
@@ -52,11 +52,11 @@
       }
 
       .song:hover {
-        transform: scale(1.1); /* Zoom on hover */
+        transform: scale(1.15); /* Zoom on hover */
       }
 
       .song img {
-        width: 90px;
+        width: 50px;
         height: 80px;
         border-radius: 5px;
         margin-right: 10px;
@@ -99,24 +99,27 @@
         .song {
           flex-direction: row;
           align-items: flex-start;
-          width: 115%;
+          width: 95%;
+          margin-left: 10%;
+          height: 2.9%;
         }
 
         .song img {
           width: 90px;
-          height: 80px;
+          height: 50px;
           margin: 0 0 10px 6px;
         }
 
         .song-title {
-          font-size: 1em;
+          font-size: 0.8em;
+          padding-top: 7%;
         }
 
         .song:hover {
-          transform: scale(1.1); /* Zoom on hover */
+          transform: scale(1.15); /* Zoom on hover */
         }
         .progress {
-          margin-left: 25%;
+          margin-left: 20%;
         }
         a {
           text-decoration: none;
@@ -138,7 +141,7 @@
         <a href="https://123nt.github.io/music/explore.html">explore</a>
       </div>
 
-      <h1>Nepali Playlist</h1>
+      <h1>my Playlist</h1>
 
       <!-- Songs List (20 Songs) -->
       <div
@@ -146,25 +149,16 @@
         onclick="togglePlay('song1')"
         style="background-color: rgb(221, 215, 215)"
       >
-        <img
-          alt="File:Sajjan Raj Vaidya Live in New York City 01.jpg"
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Sajjan_Raj_Vaidya_Live_in_New_York_City_01.jpg/506px-Sajjan_Raj_Vaidya_Live_in_New_York_City_01.jpg?20190110005409"
-          decoding="async"
-          width="506"
-          height="599"
-          srcset="
-            https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Sajjan_Raj_Vaidya_Live_in_New_York_City_01.jpg/759px-Sajjan_Raj_Vaidya_Live_in_New_York_City_01.jpg?20190110005409  1.5x,
-            https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Sajjan_Raj_Vaidya_Live_in_New_York_City_01.jpg/1012px-Sajjan_Raj_Vaidya_Live_in_New_York_City_01.jpg?20190110005409 2x
-          "
-          data-file-width="2550"
-          data-file-height="3018"
-        />
+        <img alt="" src="" decoding="async" />
         <div class="song-details">
-          <div class="song-title">Song 1: An Art Gallery Could Never Mine</div>
+          <div class="song-title">maafi - ashutosh kc</div>
         </div>
       </div>
       <div class="progress-container" id="song1">
-        <audio id="audio1" src="path_to_song1.mp3"></audio>
+        <audio
+          id="audio1"
+          src="nepalisong/Ashutosh KC - Maafi (Official Music Video).mp3"
+        ></audio>
         <input
           type="range"
           class="progress"
@@ -184,11 +178,14 @@
       >
         <img src="https://via.placeholder.com/60" alt="Song Cover" />
         <div class="song-details">
-          <div class="song-title">Song 2: Enchanted Legend Factor</div>
+          <div class="song-title">sannani - Ashutosh kc</div>
         </div>
       </div>
       <div class="progress-container" id="song2">
-        <audio id="audio2" src="path_to_song2.mp3"></audio>
+        <audio
+          id="audio2"
+          src="nepalisong/Ashutosh KC - SANNANI (Official Music Video).mp3"
+        ></audio>
         <input
           type="range"
           class="progress"
@@ -208,11 +205,11 @@
       >
         <img src="https://via.placeholder.com/60" alt="Song Cover" />
         <div class="song-details">
-          <div class="song-title">Song 3: Mysterious Melody</div>
+          <div class="song-title">basanta - jpt rockerz</div>
         </div>
       </div>
       <div class="progress-container" id="song3">
-        <audio id="audio3" src="path_to_song3.mp3"></audio>
+        <audio id="audio3" src="nepalisong/Basanta.mp3"></audio>
         <input
           type="range"
           class="progress"
@@ -222,18 +219,24 @@
         />
         <div class="play-pause"><span id="duration3">0:00</span></div>
       </div>
+      <!-- Song 4 -->
       <div
         class="song"
         onclick="togglePlay('song4')"
         style="background-color: #b4765e"
       >
-        <img src="https://via.placeholder.com/60" alt="Song Cover" />
+        <img alt="Song Cover" src="https://via.placeholder.com/60" />
         <div class="song-details">
-          <div class="song-title">Song 3: Mysterious Melody</div>
+          <div class="song-title">
+            bujhideu - samir shrestha & celi shrestha
+          </div>
         </div>
       </div>
       <div class="progress-container" id="song4">
-        <audio id="audio4" src="path_to_song3.mp3"></audio>
+        <audio
+          id="audio4"
+          src="nepalisong/Bujhideu - Samir Shrestha & Celi Shrestha (Uncut Sessions).mp3"
+        ></audio>
         <input
           type="range"
           class="progress"
@@ -241,22 +244,25 @@
           value="0"
           step="1"
         />
-        <div class="play-pause"><span id="duration3">0:00</span></div>
+        <div class="play-pause"><span id="duration4">0:00</span></div>
       </div>
-      <!--  -->
 
+      <!-- Song 5 -->
       <div
         class="song"
         onclick="togglePlay('song5')"
         style="background-color: rgb(188, 188, 219)"
       >
-        <img src="https://via.placeholder.com/60" alt="Song Cover" />
+        <img alt="Song Cover" src="https://via.placeholder.com/60" />
         <div class="song-details">
-          <div class="song-title">Song 1: An Art Gallery Could Never Mine</div>
+          <div class="song-title">dhani bau ko chhori - Hrittal</div>
         </div>
       </div>
       <div class="progress-container" id="song5">
-        <audio id="audio5" src="path_to_song1.mp3"></audio>
+        <audio
+          id="audio5"
+          src="nepalisong/Hrittal - Dhani Bau ko Chhori.mp3"
+        ></audio>
         <input
           type="range"
           class="progress"
@@ -264,23 +270,27 @@
           value="0"
           step="1"
         />
-        <div class="play-pause"><span id="duration1">0:00</span></div>
+        <div class="play-pause"><span id="duration5">0:00</span></div>
       </div>
 
-      <!-- Repeat similar blocks for each song up to Song 20 -->
-      <!-- Example for Song 2 -->
+      <!-- Song 6 -->
       <div
         class="song"
         onclick="togglePlay('song6')"
         style="background-color: rgb(165, 157, 187)"
       >
-        <img src="https://via.placeholder.com/60" alt="Song Cover" />
+        <img alt="Song Cover" src="https://via.placeholder.com/60" />
         <div class="song-details">
-          <div class="song-title">Song 2: Enchanted Legend Factor</div>
+          <div class="song-title">
+            alapatra - sajjan raj Vaidya and yabesh Thapa
+          </div>
         </div>
       </div>
       <div class="progress-container" id="song6">
-        <audio id="audio6" src="path_to_song2.mp3"></audio>
+        <audio
+          id="audio6"
+          src="nepalisong/Katha_ Episode 5  Alapatra  Sajjan Raj Vaidya x Yabesh Thapa.mp3"
+        ></audio>
         <input
           type="range"
           class="progress"
@@ -288,25 +298,22 @@
           value="0"
           step="1"
         />
-        <div class="play-pause"><span id="duration2">0:00</span></div>
+        <div class="play-pause"><span id="duration6">0:00</span></div>
       </div>
 
-      <!-- Repeat similar blocks for each song up to Song 20 -->
-      <!-- Example for Song 3 -->
+      <!-- Song 7 -->
       <div
         class="song"
         onclick="togglePlay('song7')"
         style="background-color: rgb(207, 173, 195)"
       >
-        <img src="https://via.placeholder.com/60" alt="Song Cover" />
+        <img alt="Song Cover" src="https://via.placeholder.com/60" />
         <div class="song-details">
-          <div class="song-title">Song 3: Mysterious Melody</div>
+          <div class="song-title">mutu dekhin - john Rai</div>
         </div>
       </div>
-
-      <!--  -->
       <div class="progress-container" id="song7">
-        <audio id="audio7" src="path_to_song3.mp3"></audio>
+        <audio id="audio7" src="nepalisong/Mutu Dekhin (Raw).mp3"></audio>
         <input
           type="range"
           class="progress"
@@ -314,21 +321,25 @@
           value="0"
           step="1"
         />
-        <div class="play-pause"><span id="duration3">0:00</span></div>
+        <div class="play-pause"><span id="duration7">0:00</span></div>
       </div>
-      <!--  -->
+
+      <!-- Song 8 -->
       <div
         class="song"
         onclick="togglePlay('song8')"
         style="background-color: rgb(206, 182, 188)"
       >
-        <img src="https://via.placeholder.com/60" alt="Song Cover" />
+        <img alt="Song Cover" src="https://via.placeholder.com/60" />
         <div class="song-details">
-          <div class="song-title">Song 3: Mysterious Melody</div>
+          <div class="song-title">aparichit bhaawanaa - oasis Thapa</div>
         </div>
       </div>
       <div class="progress-container" id="song8">
-        <audio id="audio8" src="path_to_song3.mp3"></audio>
+        <audio
+          id="audio8"
+          src="nepalisong/Oasis Thapa - Aparichit Bhaawanaa.mp3"
+        ></audio>
         <input
           type="range"
           class="progress"
@@ -336,22 +347,25 @@
           value="0"
           step="1"
         />
-        <div class="play-pause"><span id="duration3">0:00</span></div>
+        <div class="play-pause"><span id="duration8">0:00</span></div>
       </div>
 
-      <!--  -->
+      <!-- Song 9 -->
       <div
         class="song"
         onclick="togglePlay('song9')"
         style="background-color: rgb(177, 153, 189)"
       >
-        <img src="https://via.placeholder.com/60" alt="Song Cover" />
+        <img alt="Song Cover" src="https://via.placeholder.com/60" />
         <div class="song-details">
-          <div class="song-title">Song 1: An Art Gallery Could Never Mine</div>
+          <div class="song-title">angalney chu - oshin Karki</div>
         </div>
       </div>
       <div class="progress-container" id="song9">
-        <audio id="audio9" src="path_to_song1.mp3"></audio>
+        <audio
+          id="audio9"
+          src="nepalisong/Oshin Karki - Angalney Chu.mp3"
+        ></audio>
         <input
           type="range"
           class="progress"
@@ -359,24 +373,48 @@
           value="0"
           step="1"
         />
-        <div class="play-pause"><span id="duration1">0:00</span></div>
+        <div class="play-pause"><span id="duration9">0:00</span></div>
       </div>
 
-      <!-- Repeat similar blocks for each song up to Song 20 -->
-      <!-- Example for Song 2 -->
+      <!-- Song 10 -->
+      <div
+        class="song"
+        onclick="togglePlay('song10')"
+        style="background-color: rgb(159, 166, 187)"
+      >
+        <img alt="Song Cover" src="https://via.placeholder.com/60" />
+        <div class="song-details">
+          <div class="song-title">rahar - oshin Karki</div>
+        </div>
+      </div>
+      <div class="progress-container" id="song10">
+        <audio
+          id="audio10"
+          src="nepalisong/Oshin Karki - Rahar रहर.mp3"
+        ></audio>
+        <input
+          type="range"
+          class="progress"
+          id="progress10"
+          value="0"
+          step="1"
+        />
+        <div class="play-pause"><span id="duration10">0:00</span></div>
+      </div>
 
+      <!-- Song 11 -->
       <div
         class="song"
         onclick="togglePlay('song11')"
-        style="background-color: rgba(211, 160, 160, 0.589)"
+        style="background-color: rgb(221, 215, 215)"
       >
-        <img src="https://via.placeholder.com/60" alt="Song Cover" />
+        <img alt="Song Cover" src="https://via.placeholder.com/60" />
         <div class="song-details">
-          <div class="song-title">Song 3: Mysterious Melody</div>
+          <div class="song-title">Hitaiko maya - neetesh jung kunwar</div>
         </div>
       </div>
       <div class="progress-container" id="song11">
-        <audio id="audio11" src="path_to_song3.mp3"></audio>
+        <audio id="audio11" src="nepalisong/Hitaiko Maya.mp3"></audio>
         <input
           type="range"
           class="progress"
@@ -384,22 +422,25 @@
           value="0"
           step="1"
         />
-        <div class="play-pause"><span id="duration3">0:00</span></div>
+        <div class="play-pause"><span id="duration11">0:00</span></div>
       </div>
 
-      <!--  -->
+      <!-- Song 12 -->
       <div
         class="song"
         onclick="togglePlay('song12')"
-        style="background-color: rgba(201, 190, 190, 0.247)"
+        style="background-color: rgba(190, 184, 184, 0.89)"
       >
-        <img src="https://via.placeholder.com/60" alt="Song Cover" />
+        <img alt="Song Cover" src="https://via.placeholder.com/60" />
         <div class="song-details">
-          <div class="song-title">Song 3: Mysterious Melody</div>
+          <div class="song-title">sparsha Sangeet - purna rai</div>
         </div>
       </div>
       <div class="progress-container" id="song12">
-        <audio id="audio12" src="path_to_song3.mp3"></audio>
+        <audio
+          id="audio12"
+          src="nepalisong/Purna Rai - Sparsha Sangeet-Raw(Timro maya  vaye mero maya ).mp3"
+        ></audio>
         <input
           type="range"
           class="progress"
@@ -407,21 +448,22 @@
           value="0"
           step="1"
         />
-        <div class="play-pause"><span id="duration3">0:00</span></div>
+        <div class="play-pause"><span id="duration12">0:00</span></div>
       </div>
 
+      <!-- Song 13 -->
       <div
         class="song"
         onclick="togglePlay('song13')"
-        style="background-color: rgb(196, 190, 190)"
+        style="background-color: #dac2c2"
       >
-        <img src="https://via.placeholder.com/60" alt="Song Cover" />
+        <img alt="Song Cover" src="https://via.placeholder.com/60" />
         <div class="song-details">
-          <div class="song-title">Song 1: An Art Gallery Could Never Mine</div>
+          <div class="song-title">Sadhana - jahn Rai</div>
         </div>
       </div>
       <div class="progress-container" id="song13">
-        <audio id="audio13" src="path_to_song1.mp3"></audio>
+        <audio id="audio13" src="nepalisong/Sadhana.mp3"></audio>
         <input
           type="range"
           class="progress"
@@ -429,23 +471,25 @@
           value="0"
           step="1"
         />
-        <div class="play-pause"><span id="duration1">0:00</span></div>
+        <div class="play-pause"><span id="duration13">0:00</span></div>
       </div>
 
-      <!-- Repeat similar blocks for each song up to Song 20 -->
-      <!-- Example for Song 2 -->
+      <!-- Song 14 -->
       <div
         class="song"
         onclick="togglePlay('song14')"
-        style="background-color: rgba(174, 216, 135, 0.678)"
+        style="background-color: #b4765e"
       >
-        <img src="https://via.placeholder.com/60" alt="Song Cover" />
+        <img alt="Song Cover" src="https://via.placeholder.com/60" />
         <div class="song-details">
-          <div class="song-title">Song 2: Enchanted Legend Factor</div>
+          <div class="song-title">9841 - sajjan raj Vaidya</div>
         </div>
       </div>
       <div class="progress-container" id="song14">
-        <audio id="audio14" src="path_to_song2.mp3"></audio>
+        <audio
+          id="audio14"
+          src="nepalisong/Sajjan Raj Vaidya - 9841 [Official Release] - Sajjan (youtube) (1).mp3"
+        ></audio>
         <input
           type="range"
           class="progress"
@@ -453,23 +497,25 @@
           value="0"
           step="1"
         />
-        <div class="play-pause"><span id="duration2">0:00</span></div>
+        <div class="play-pause"><span id="duration14">0:00</span></div>
       </div>
 
-      <!-- Repeat similar blocks for each song up to Song 20 -->
-      <!-- Example for Song 3 -->
+      <!-- Song 15 -->
       <div
         class="song"
         onclick="togglePlay('song15')"
-        style="background-color: rgb(186, 190, 149)"
+        style="background-color: rgb(188, 188, 219)"
       >
-        <img src="https://via.placeholder.com/60" alt="Song Cover" />
+        <img alt="Song Cover" src="https://via.placeholder.com/60" />
         <div class="song-details">
-          <div class="song-title">Song 3: Mysterious Melody</div>
+          <div class="song-title">dhairya - sajjan raj Vaidya</div>
         </div>
       </div>
       <div class="progress-container" id="song15">
-        <audio id="audio15" src="path_to_song3.mp3"></audio>
+        <audio
+          id="audio15"
+          src="nepalisong/Sajjan Raj Vaidya - Dhairya [Official Release].mp3"
+        ></audio>
         <input
           type="range"
           class="progress"
@@ -477,20 +523,25 @@
           value="0"
           step="1"
         />
-        <div class="play-pause"><span id="duration3">0:00</span></div>
+        <div class="play-pause"><span id="duration15">0:00</span></div>
       </div>
+
+      <!-- Song 16 -->
       <div
         class="song"
         onclick="togglePlay('song16')"
-        style="background-color: rgb(190, 171, 192)"
+        style="background-color: rgb(165, 157, 187)"
       >
-        <img src="https://via.placeholder.com/60" alt="Song Cover" />
+        <img alt="Song Cover" src="https://via.placeholder.com/60" />
         <div class="song-details">
-          <div class="song-title">Song 3: Mysterious Melody</div>
+          <div class="song-title">ghumi phiri - sajja raj Vaidya</div>
         </div>
       </div>
       <div class="progress-container" id="song16">
-        <audio id="audio16" src="path_to_song3.mp3"></audio>
+        <audio
+          id="audio16"
+          src="nepalisong/Sajjan Raj Vaidya - Ghumi Phiri [Official Release].mp3"
+        ></audio>
         <input
           type="range"
           class="progress"
@@ -498,20 +549,27 @@
           value="0"
           step="1"
         />
-        <div class="play-pause"><span id="duration3">0:00</span></div>
+        <div class="play-pause"><span id="duration16">0:00</span></div>
       </div>
+
+      <!-- Song 17 -->
       <div
         class="song"
         onclick="togglePlay('song17')"
-        style="background-color: rgb(182, 178, 125)"
+        style="background-color: rgb(207, 173, 195)"
       >
-        <img src="https://via.placeholder.com/60" alt="Song Cover" />
+        <img alt="Song Cover" src="https://via.placeholder.com/60" />
         <div class="song-details">
-          <div class="song-title">Song 1: An Art Gallery Could Never Mine</div>
+          <div class="song-title">
+            hataarindai, bataasindai - sajjan raj Vaidya
+          </div>
         </div>
       </div>
       <div class="progress-container" id="song17">
-        <audio id="audio17" src="path_to_song1.mp3"></audio>
+        <audio
+          id="audio17"
+          src="nepalisong/Sajjan Raj Vaidya - Hataarindai, Bataasindai [Official Release].mp3"
+        ></audio>
         <input
           type="range"
           class="progress"
@@ -519,23 +577,25 @@
           value="0"
           step="1"
         />
-        <div class="play-pause"><span id="duration1">0:00</span></div>
+        <div class="play-pause"><span id="duration17">0:00</span></div>
       </div>
 
-      <!-- Repeat similar blocks for each song up to Song 20 -->
-      <!-- Example for Song 2 -->
+      <!-- Song 18 -->
       <div
         class="song"
         onclick="togglePlay('song18')"
-        style="background-color: rgb(199, 230, 205)"
+        style="background-color: rgb(206, 182, 188)"
       >
-        <img src="https://via.placeholder.com/60" alt="Song Cover" />
+        <img alt="Song Cover" src="https://via.placeholder.com/60" />
         <div class="song-details">
-          <div class="song-title">Song 2: Enchanted Legend Factor</div>
+          <div class="song-title">pahaar - sajjan raj Vaidya</div>
         </div>
       </div>
       <div class="progress-container" id="song18">
-        <audio id="audio18" src="path_to_song2.mp3"></audio>
+        <audio
+          id="audio18"
+          src="nepalisong/Sajjan Raj Vaidya - Pahaar [Official Release].mp3"
+        ></audio>
         <input
           type="range"
           class="progress"
@@ -543,23 +603,25 @@
           value="0"
           step="1"
         />
-        <div class="play-pause"><span id="duration2">0:00</span></div>
+        <div class="play-pause"><span id="duration18">0:00</span></div>
       </div>
 
-      <!-- Repeat similar blocks for each song up to Song 20 -->
-      <!-- Example for Song 3 -->
+      <!-- Song 19 -->
       <div
         class="song"
         onclick="togglePlay('song19')"
-        style="background-color: rgb(159, 166, 187)"
+        style="background-color: rgb(177, 153, 189)"
       >
-        <img src="https://via.placeholder.com/60" alt="Song Cover" />
+        <img alt="Song Cover" src="https://via.placeholder.com/60" />
         <div class="song-details">
-          <div class="song-title">Song 3: Mysterious Melody</div>
+          <div class="song-title">parkhaai - sajjan raj Vaidya</div>
         </div>
       </div>
       <div class="progress-container" id="song19">
-        <audio id="audio19" src="path_to_song3.mp3"></audio>
+        <audio
+          id="audio19"
+          src="nepalisong/Sajjan Raj Vaidya - Parkhaai [Official Release].mp3"
+        ></audio>
         <input
           type="range"
           class="progress"
@@ -567,10 +629,55 @@
           value="0"
           step="1"
         />
-        <div class="play-pause"><span id="duration3">0:00</span></div>
+        <div class="play-pause"><span id="duration19">0:00</span></div>
       </div>
 
-      <!-- Repeat this structure up to Song 20 -->
+      <!-- Song 20 -->
+      <div
+        class="song"
+        onclick="togglePlay('song20')"
+        style="background-color: rgb(159, 166, 187)"
+      >
+        <img alt="Song Cover" src="https://via.placeholder.com/60" />
+        <div class="song-details">
+          <div class="song-title">Upahaar - Swoopna Suman</div>
+        </div>
+      </div>
+      <div class="progress-container" id="song20">
+        <audio
+          id="audio20"
+          src="nepalisong/Upahaar - Swoopna Suman (Official MV).mp3"
+        ></audio>
+        <input
+          type="range"
+          class="progress"
+          id="progress20"
+          value="0"
+          step="1"
+        />
+        <div class="play-pause"><span id="duration20">0:00</span></div>
+      </div>
+      <div
+        class="song"
+        onclick="togglePlay('song21')"
+        style="background-color: rgb(159, 166, 187)"
+      >
+        <img alt="Song Cover" src="https://via.placeholder.com/60" />
+        <div class="song-details">
+          <div class="song-title">Vanana Matra - john rai</div>
+        </div>
+      </div>
+      <div class="progress-container" id="song21">
+        <audio id="audio21" src="nepalisong/Vanana Matra.mp3"></audio>
+        <input
+          type="range"
+          class="progress"
+          id="progress21"
+          value="0"
+          step="1"
+        />
+        <div class="play-pause"><span id="duration21">0:00</span></div>
+      </div>
     </div>
 
     <script>
@@ -578,39 +685,38 @@
       let currentlyPlayingContainer = null;
 
       function togglePlay(songId) {
-        const progressContainer = document.getElementById(songId);
         const audio = document.getElementById(
-          `audio${songId.charAt(songId.length - 1)}`
+          `audio${songId.replace("song", "")}`
         );
+        const progressContainer = document.getElementById(songId);
 
+        // Pause the current song if another is clicked
         if (currentlyPlayingAudio && currentlyPlayingAudio !== audio) {
           currentlyPlayingAudio.pause();
           currentlyPlayingContainer.style.display = "none";
         }
 
+        // Toggle play/pause of the selected song
         if (currentlyPlayingAudio === audio) {
           audio.pause();
           currentlyPlayingContainer.style.display = "none";
           currentlyPlayingAudio = null;
           currentlyPlayingContainer = null;
-          return;
-        }
-
-        progressContainer.style.display = "block";
-
-        if (audio.paused) {
+        } else {
           audio.play();
+          progressContainer.style.display = "block";
           currentlyPlayingAudio = audio;
           currentlyPlayingContainer = progressContainer;
           updateProgress(audio, songId);
         }
 
+        // When the song ends, reset currentlyPlayingAudio and play the next song automatically
         audio.addEventListener("ended", () => {
+          currentlyPlayingAudio = null;
+          currentlyPlayingContainer.style.display = "none";
           const nextSongId = getNextSongId(songId);
           if (nextSongId) {
-            setTimeout(() => {
-              togglePlay(nextSongId);
-            }, 2000);
+            setTimeout(() => togglePlay(nextSongId), 2000);
           }
         });
       }
@@ -623,28 +729,29 @@
 
       function updateProgress(audio, songId) {
         const progress = document.getElementById(
-          `progress${songId.charAt(songId.length - 1)}`
+          `progress${songId.replace("song", "")}`
         );
         const durationLabel = document.getElementById(
-          `duration${songId.charAt(songId.length - 1)}`
+          `duration${songId.replace("song", "")}`
         );
 
+        // Update progress and time display
         audio.addEventListener("timeupdate", () => {
-          const duration = audio.duration;
-          const currentTime = audio.currentTime;
+          const duration = audio.duration || 0;
+          const currentTime = audio.currentTime || 0;
           const progressValue = (currentTime / duration) * 100;
           progress.value = progressValue;
 
           const minutes = Math.floor(currentTime / 60);
-          const seconds = Math.floor(currentTime % 60);
-          durationLabel.textContent = `${minutes}:${seconds
+          const seconds = Math.floor(currentTime % 60)
             .toString()
-            .padStart(2, "0")}`;
+            .padStart(2, "0");
+          durationLabel.textContent = `${minutes}:${seconds}`;
         });
 
+        // Allow user to seek by clicking on the progress bar
         progress.addEventListener("input", (event) => {
-          event.preventDefault();
-          const newTime = (progress.value / 100) * audio.duration;
+          const newTime = (event.target.value / 100) * audio.duration;
           audio.currentTime = newTime;
         });
       }
